@@ -1,19 +1,22 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // Pseudocode:
+  // Iterate through each element in the array
+  // For each num1, iterate through the remaining elements (let's call the current one num2).
+  // Check if num1 + num2 equals the target.
+  // If true, return true.
+  // If no pair is found after both iterations, return false.
+
+  for (let i = 0; i < array.length - 1; i++) {
+    const num1 = array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      const num2 = array[j];
+      if (num1 + num2 === target) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
-
-/* 
-  Write the Big O time complexity of your function here
-*/
-
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
